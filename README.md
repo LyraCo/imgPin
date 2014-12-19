@@ -1,6 +1,6 @@
 #imgPin <a href='#/master/CHANGELOG.md' class='version' title='Whats New?'>v1.0</a>
 
-###Use jquery to add pin this buttons to images on your site
+###Use jquery to add "pin this" buttons to images on your site
 
 imgPin lets you automatically add "pin this" buttons over images on your website.  Features include:
 * - Button revealed on rollover
