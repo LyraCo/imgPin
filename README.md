@@ -67,6 +67,7 @@ $('.images img').imgPin({pinImg: 'CUSTOM_IMG_URL', position: 3});
 ##To-Do
 * Browser testing
 * Responsive testing
+* show automatically on mobile
 
 I'm open to changes in how this functions - love feedback and suggestions.
 

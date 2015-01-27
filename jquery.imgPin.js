@@ -9,10 +9,6 @@
 (function( $ ){
   $.fn.imgPin = function( options ) {
 
-
-    // Extend our default options with those provided.
-    // Note that the first argument to extend is an empty
-    // object – this is to keep from overriding our "defaults" object.
     var defaults = {
       pinImg : 'https://assets.pinterest.com/images/pidgets/pin_it_button.png',
       position: 1, // Display default header
@@ -54,8 +50,11 @@
           link += '&media='+imgURL;
           link += '&description='+description;
 
+      // Generate Ganalytics
+      var onClickCode = "_gaq.push(['_trackEvent', 'imgPin - Pinterest', '', '"+shareURL+"', 1]);";
+
       //add wrappers
-      $(this).wrap('<div class="imgPinWrap">').after('<a href="'+link+'" class="pin '+position+'"><img src="'+pinImg+'" alt="Pin this!"></a>');
+      $(this).wrap('<div class="imgPinWrap">').after('<a href="'+link+'" class="pin '+position+'" onclick="'+onClickCode+'" ><img src="'+pinImg+'" alt="Pin this!" title="Pin this image."></a>');
 
       //position center
       if (options.position == 5) {
