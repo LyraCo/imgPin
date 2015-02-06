@@ -51,10 +51,10 @@
           link += '&description='+description;
 
       // Generate Ganalytics
-      var onClickCode = "_gaq.push(['_trackEvent', 'imgPin - Pinterest', '', '"+shareURL+"', 1]);";
+      var onClickCode = "_gaq.push(['_trackEvent', 'imgPin - Pinterest', 'click-share', '"+document.URL+"', 1]);";
 
       //add wrappers
-      $(this).wrap('<div class="imgPinWrap">').after('<a href="'+link+'" class="pin '+position+'" onclick="'+onClickCode+'" ><img src="'+pinImg+'" alt="Pin this!" title="Pin this image."></a>');
+      $(this).wrap('<div class="imgPinWrap">').after('<a href="'+link+'" class="pin '+position+'"><img src="'+pinImg+'" alt="Pin this!" title="Pin this image."></a>');
 
       //position center
       if (options.position == 5) {
@@ -70,6 +70,13 @@
 
       //set click events
       $('.imgPinWrap .pin').click(function(){
+        if (typeof ga !== 'undefined') {
+          ga('send', '_trackEvent', 'imgPin - Pinterest', 'click-share', 'page: '+document.URL+', image:'+imgURL, 1);
+         }
+        //check if _gaq is set too
+        if (typeof _gaq !== 'undefined') {
+          _gaq.push(['_trackEvent', 'imgPin - Pinterest', 'click-share', 'page: '+document.URL+', image:'+imgURL, 1]);
+        }
         var w = 700,
           h = 400;
         var left = (screen.width/2)-(w/2);

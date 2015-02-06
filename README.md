@@ -1,4 +1,4 @@
-#imgPin <a href='#/master/CHANGELOG.md' class='version' title='Whats New?'>v1.0</a>
+#imgPin <a href='#/master/CHANGELOG.md' class='version' title='Whats New?'>v0.1.1</a>
 
 ###Use jquery to add "pin this" buttons to images on your site
 
